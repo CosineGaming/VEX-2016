@@ -1,3 +1,4 @@
+
 // Functions that are used in both teleop and anonymous mode
 
 #include "JoystickDriver.c"
@@ -38,3 +39,24 @@
 
 int turnsToEncoders(float turns) { return turns * 1440; }
 float encodersToTurns(int encoders) { return encoders / 1440.0; }
+
+void setLeft(int speed)
+{
+    motor[l1] = speed;
+    motor[l2] = speed;
+    motor[l3] = speed;
+    return;
+}
+
+void setRight(int speed)
+{
+    motor[r1] = speed;
+    motor[r2] = speed;
+    motor[r3] = speed;
+    return;
+}
+
+void zeroEncoders(void)
+{
+    return;
+}
