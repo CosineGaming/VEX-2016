@@ -1,3 +1,10 @@
+#pragma config(Motor,  motor1,          r1,            tmotorVexIQ, PIDControl, encoder)
+#pragma config(Motor,  motor2,          l1,            tmotorVexIQ, PIDControl, reversed, encoder)
+#pragma config(Motor,  motor3,          r2,            tmotorVexIQ, PIDControl, encoder)
+#pragma config(Motor,  motor4,          l2,            tmotorVexIQ, PIDControl, reversed, encoder)
+#pragma config(Motor,  motor5,          r3,            tmotorVexIQ, PIDControl, encoder)
+#pragma config(Motor,  motor6,          l3,            tmotorVexIQ, PIDControl, reversed, encoder)
+
 // Functions that are used in both teleop and anonymous mode
 
 #include "JoystickDriver.c"
@@ -38,3 +45,15 @@
 
 int turnsToEncoders(float turns) { return turns * 1440; }
 float encodersToTurns(int encoders) { return encoders / 1440.0; }
+
+void setLeft(int speed)
+{
+    motor[lf] = speed;
+    motor[lb] = speed;
+}
+
+void setRight(int speed)
+{
+    motor[rf] = speed;
+    motor[rb] = speed;
+}
